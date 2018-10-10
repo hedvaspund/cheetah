@@ -5,7 +5,7 @@ class Producer < ActiveRecord::Base
   def as_json(options={})
     super(:only => [:name],
           :include => {
-            :products => {:only => [:name],:include => {:product_infos => {:only => [:scheduled_at,:photo_url, :price_cents, :barcode, :sku]}}}
+            :products => {:only => [:name],:include => {:current_info => {:only => [:scheduled_at,:photo_url, :price_cents, :barcode, :sku]}}}
           }
     )
   end

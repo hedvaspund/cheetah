@@ -11,6 +11,7 @@ class Api::V1::ProductsController < ActionController::API
     }
     rescue ActiveRecord::RecordNotFound
       render json: { error: "Unable to find producer" }.to_json
-
+    rescue
+      render json: { error: "Oppss ...."}
   end 
 end
